@@ -9,3 +9,17 @@ before_install:
 
 script: 
   - docker run samip001/frontend-dockerapp npm run test -- --coverage --watchAll=false
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "Docker Testing App"
+  env: "dockerstartupenv"
+  bucket_name: "elasticbeanstalk-us-east-1-531265995453"
+  bucket_path: "dockerstartupenv"
+  on:
+    branch: main
+  
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
