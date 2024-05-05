@@ -13,7 +13,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "Docker Testing App"
+  app: "dockerstartupenv"
   env: "dockerstartupenv"
   bucket_name: "elasticbeanstalk-us-east-1-531265995453"
   bucket_path: "dockerstartupenv"
