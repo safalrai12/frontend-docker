@@ -8,4 +8,4 @@ before_install:
   - docker build -t samip001/frontend-dockerapp -f Dockerfile.dev .
 
 script: 
-  - docker run samip001/frontend-dockerapp npm run test -- --coverage
+  - docker run samip001/frontend-dockerapp npm run test -- --coverage --watchAll=false
