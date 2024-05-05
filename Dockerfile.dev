@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY ./ ./
+
+CMD [ "npm", "run", "start" ]
+
+#build command
+# docker build -f Dockerfile.dev -t samip001/reactapp.
